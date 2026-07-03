@@ -1,0 +1,11 @@
+name: GTDonationChzzk
+description: $description
+prefix: GT Donation Chzzk
+version: '${version}'
+
+main: dev.gotiger.gTDonationChzzk.GTDonationChzzk
+api-version: '1.20'
+load: STARTUP
+
+authors: [go-tiger]
+website: gotiger.dev
