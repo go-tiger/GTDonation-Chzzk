@@ -10,3 +10,8 @@ depend: [GTDonationCore]
 
 authors: [go-tiger]
 website: gotiger.dev
+
+commands:
+  chzzk:
+    description: 치지직 계정 연동 해제
+    usage: /chzzk unlink

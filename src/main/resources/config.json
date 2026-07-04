@@ -1,0 +1,9 @@
+{
+  "CLIENT_ID": "",
+  "CLIENT_SECRET": "",
+  "displayHost": "localhost",
+  "port": 20154,
+  "https": false,
+  "callbackPath": "/callback",
+  "debug": false
+}

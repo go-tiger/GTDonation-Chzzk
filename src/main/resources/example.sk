@@ -1,0 +1,27 @@
+# ===== GTDonationCore 이벤트 연동 예제 (Skript + skript-reflect) =====
+# 필요 플러그인: Skript, skript-reflect
+#
+# GTDonationChzzk가 치지직 채팅/후원을 수신하면
+# GTDonationCore의 ChatEvent / DonationEvent를 발생시킵니다.
+# 아래처럼 import: 구문으로 이벤트 클래스를 가져와 사용하세요.
+
+import:
+    dev.gotiger.gTDonationCore.event.ChatEvent
+    dev.gotiger.gTDonationCore.event.DonationEvent
+
+on ChatEvent:
+    set {_player} to event.getPlayer()
+    set {_chatterName} to event.getChatterName()
+    set {_message} to event.getMessage()
+    set {_platform} to event.getPlatform()
+
+    send "&b[채팅]&f %{_chatterName}%님이 %{_player}%님의 채널에서: %{_message}%" to console
+
+on DonationEvent:
+    set {_player} to event.getPlayer()
+    set {_donorName} to event.getDonorName()
+    set {_amount} to event.getAmount()
+    set {_message} to event.getMessage()
+    set {_platform} to event.getPlatform()
+
+    send "&a[후원]&f %{_donorName}%님이 %{_player}%님에게 %{_amount}%원을 후원했습니다! (%{_message}%)" to console
