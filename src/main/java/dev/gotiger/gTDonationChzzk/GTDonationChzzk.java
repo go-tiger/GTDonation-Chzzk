@@ -23,9 +23,9 @@ public final class GTDonationChzzk extends JavaPlugin {
             getDataFolder().mkdirs();
         }
 
-        File configFile = new File(getDataFolder(), "config.json");
+        File configFile = new File(getDataFolder(), "config.yml");
         if (!configFile.exists()) {
-            saveResource("config.json", false);
+            saveResource("config.yml", false);
         }
 
         configLoader = new ConfigLoader(getDataFolder());
