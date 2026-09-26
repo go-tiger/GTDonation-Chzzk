@@ -83,6 +83,11 @@ public class PlayerListener implements Listener {
         if (session != null) {
             session.disconnectAsync().join();
             plugin.getLogger().info("[CHZZK] 세션 종료됨: " + uuid);
+
+            Player player = Bukkit.getPlayer(uuid);
+            if (player != null) {
+                GTDonationAPI.callConnectionEvent(player, Platform.CHZZK, false);
+            }
         }
     }
 
@@ -203,6 +208,8 @@ public class PlayerListener implements Listener {
 
             plugin.getLogger().info("[CHZZK] " + player.getName() + " 세션 연결됨");
             player.sendMessage("§a[CHZZK] 인증이 완료되었습니다.");
+            Bukkit.getScheduler().runTask(plugin, () ->
+                    GTDonationAPI.callConnectionEvent(player, Platform.CHZZK, true));
 
         } catch (Exception e) {
             if (attempt < SESSION_RETRY_COUNT) {
